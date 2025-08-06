@@ -1,0 +1,145 @@
+/* 区域选择器样式 */
+.screenshot-selector {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 999999;
+  cursor: crosshair;
+  user-select: none;
+}
+
+.screenshot-selector.active {
+  cursor: crosshair;
+}
+
+.screenshot-selector .selection-box {
+  position: absolute;
+  border: 2px solid #4285f4;
+  background: rgba(66, 133, 244, 0.1);
+  pointer-events: none;
+  z-index: 1000000;
+}
+
+.screenshot-selector .selection-box .resize-handle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #4285f4;
+  border: 1px solid white;
+  cursor: pointer;
+  pointer-events: all;
+}
+
+.screenshot-selector .selection-box .resize-handle.nw {
+  top: -4px;
+  left: -4px;
+  cursor: nw-resize;
+}
+
+.screenshot-selector .selection-box .resize-handle.ne {
+  top: -4px;
+  right: -4px;
+  cursor: ne-resize;
+}
+
+.screenshot-selector .selection-box .resize-handle.sw {
+  bottom: -4px;
+  left: -4px;
+  cursor: sw-resize;
+}
+
+.screenshot-selector .selection-box .resize-handle.se {
+  bottom: -4px;
+  right: -4px;
+  cursor: se-resize;
+}
+
+.screenshot-selector .selection-box .size-info {
+  position: absolute;
+  top: -30px;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.screenshot-selector .toolbar {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 12px;
+  z-index: 1000001;
+  display: flex;
+  gap: 8px;
+}
+
+.screenshot-selector .toolbar button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.screenshot-selector .toolbar .capture-btn {
+  background: #4285f4;
+  color: white;
+}
+
+.screenshot-selector .toolbar .capture-btn:hover {
+  background: #3367d6;
+}
+
+.screenshot-selector .toolbar .cancel-btn {
+  background: #f1f3f4;
+  color: #5f6368;
+}
+
+.screenshot-selector .toolbar .cancel-btn:hover {
+  background: #e8eaed;
+}
+
+.screenshot-selector .toolbar .fullpage-btn {
+  background: #34a853;
+  color: white;
+}
+
+.screenshot-selector .toolbar .fullpage-btn:hover {
+  background: #2d8e47;
+}
+
+.screenshot-selector .hint {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 16px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  text-align: center;
+  z-index: 1000002;
+  pointer-events: none;
+}
+
+.screenshot-selector.selecting .selection-box {
+  border-style: dashed;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
+} 
