@@ -1,6 +1,6 @@
 # Full Page Screenshot Chrome Extension
 
-一个Chrome扩展插件，用于截取网页的完整长图，包括需要滚动才能看到的内容。
+一个Chrome扩展插件，用于截取网页的指定区域长图，包括需要滚动才能看到的内容。
 
 ## 功能特点
 
